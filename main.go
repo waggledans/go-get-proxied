@@ -16,7 +16,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"github.com/rapid7/go-get-proxied/proxy"
+	"github.com/waggledans/go-get-proxied/proxy"
 	"io/ioutil"
 	"log"
 	"os"
@@ -37,7 +37,7 @@ func main() {
 		target   string
 		jsonOut  bool
 		verbose  bool
-		useList bool
+		useList  bool
 	)
 	if protocolP != nil {
 		protocol = *protocolP

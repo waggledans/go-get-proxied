@@ -13,7 +13,7 @@
 package proxy
 
 import (
-	"github.com/rapid7/go-get-proxied/winhttp"
+	"github.com/waggledans/go-get-proxied/winhttp"
 	"log"
 	"net/url"
 	"reflect"
@@ -58,7 +58,7 @@ func (p *providerWindows) GetProxy(protocol string, targetUrlStr string) Proxy {
 	if len(proxies) == 0 {
 		return nil
 	}
-	return proxies[len(proxies) - 1]
+	return proxies[len(proxies)-1]
 }
 
 /*
@@ -117,7 +117,7 @@ func (p *providerWindows) GetProxies(protocol string, targetUrlStr string) []Pro
 	targetUrl := ParseTargetURL(targetUrlStr, protocol)
 	proxy := p.provider.get(protocol, targetUrl)
 	if proxy != nil {
-		return  []Proxy{proxy}
+		return []Proxy{proxy}
 	}
 	proxies := p.readWinHttpProxy(protocol, targetUrl)
 	return proxies
